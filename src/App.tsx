@@ -1,9 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Columns from './Columns';
 
 function App() {
-  
+  return <>
+  <h1>Hello world!</h1>
+  <Columns/>
+  </>
 }
 
 export default App;
