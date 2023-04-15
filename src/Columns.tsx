@@ -3,33 +3,34 @@ import { useState, useEffect } from 'react';
 interface columnProps {
     price: number;
     hour: number;
-    date: string
+    day: number;
+    month: number;
 };
 
 export default function Columns() {
-    const [column, setColumn] = useState()
+    const [columns, setColumns] = useState<columnProps[]>([])
 
-    const api_URL = 'https://api.porssisahko.net/v1/latest-prices.json';
+    const api_URL = 'http://localhost:8888';
     useEffect(() => {
         async function GetData() {
-            const data = await (await fetch(api_URL)).json()
+            const data = await (await fetch(api_URL)).json();
             
-            const mappedData = data.prices.map((element: any) => {
-                const date = new Date(element.startDate)
-                const hour = date.getHours()
-                const day = `${date.getDay()}.${date.getMonth()}`
-                
-                return {
-                    price: element.price,
-                    hour: hour,
-                    date: day
-                }
-            });
-            setColumn(mappedData);
+            setColumns(data);
         };
     GetData();
     }, []);
+    
+    const columnArray = columns.map(column => {
+            return (<div
+                className='column'
+                key={ column.month.toString()+column.day.toString()+column.hour.toString() }
+                style={{ height: column.price*100 }}
+            >
+                {column.price}
+            </div>);
+        });
     return (
-        <div>column</div>
+        <div className='columns'>{columnArray}</div>
+
     );
-}
+};
