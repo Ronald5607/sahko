@@ -7,16 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.columns {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  align-items: end;
-}
-
-.column {
-  width: auto;
-  margin: 5px;
-  background-color: aliceblue;
+h1 {
+  text-align: center;
 }
 
