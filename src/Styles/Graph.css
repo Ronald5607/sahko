@@ -7,15 +7,23 @@
     overflow: scroll;
     overflow-y: hidden;
     height: 75vh;
+
     color: var(--text-color);
+    background-color: var(--graph-bg-color);
+    
+    z-index: 10;
   }
 
-  .info {
+.info {
     position: sticky;
     left: 0;
-    text-align: center;
+    text-align: end;
+
+    background-color: var(--graph-info-color);
+
+    z-index: 12;
   }
 
-  .info div {
-    text-align: center;
-  }
+  #day {
+    margin-top: 5%;
+}

@@ -9,5 +9,16 @@
   
   .column {
     width: 20px;
+    border-radius: 5px 5px 0 0;
+
     background-color: var(--column-color);
+  }
+
+  .price {
+    position: relative;
+    bottom: 20px;
+    text-align: center;
+
+
+    z-index: 11;
   }

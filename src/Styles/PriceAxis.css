@@ -2,31 +2,23 @@
     display: grid;
     row-gap: 10%;
     grid-template-columns: 1fr 1fr 1fr;
-    margin-top: 5px;
     position: sticky;
     left: 0px;
     justify-self: end;
     justify-items: end;
 
-    background-color: var(--graph-bg-color);
+    background-color: var(--graph-info-color);
+
+    z-index: 12;
 }
 
 .numbers {
     display: grid;
 }
 
-
-
-
-
 .priceinfo {
     align-self: center;
     transform: rotate(70deg);
-
-}
-
-#day {
-    margin-top: 5%;
 }
 
 .verticalline {

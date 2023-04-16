@@ -1,5 +1,6 @@
 html {
   --graph-bg-color: white;
+  --graph-info-color: white;
   --column-color: blue;
   --text-color: black;
 }
