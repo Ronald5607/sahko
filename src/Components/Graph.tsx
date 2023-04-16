@@ -19,19 +19,18 @@ export default function Graph() {
     useEffect(() => {
         async function GetData() {
             const data = await (await fetch(api_URL)).json(); 
-            setGraphData(data);
+            setGraphData(data.reverse());
         };
     GetData();
     }, []);
 
-    const columndata = GraphData.map((column, index) => {
-        return {
-            id: index,
-            height: column.price * 100
-        }
-    });
-
+    let MaxPrice = 0;
     const PriceAxisData = GraphData.map(column => { return column.price });
+    try {
+    MaxPrice = PriceAxisData.reduce((current, price) => { return Math.max(current, price) });
+    MaxPrice = Math.ceil(MaxPrice);
+} catch (error) {console.log(error)}
+
     const DateAxisData = GraphData.map(column => {
         return { hour: column.hour,
             day: column.day,
@@ -39,9 +38,9 @@ export default function Graph() {
     });
     return (<>
     <div className="graph">
-        <PriceAxis data={PriceAxisData}/>
+        <PriceAxis MaxPrice={MaxPrice} data={PriceAxisData}/>
         <div className='columns'>
-            <Columns ColumnArray={columndata}/>
+            <Columns MaxPrice={MaxPrice} PriceArray={PriceAxisData}/>
         </div>
         <div className="info">
             <div>Tunti:</div>

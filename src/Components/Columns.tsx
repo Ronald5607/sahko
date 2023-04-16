@@ -1,19 +1,17 @@
 import '../Styles/Columns.css';
 
 interface ColumnProps {
-    id: number;
-    height: number
+    MaxPrice: number;
+    PriceArray: number[]
 };
 
-interface ColumnPropArray {
-    ColumnArray: ColumnProps[]
-}
-
-export default function Columns(Props: ColumnPropArray) {
+export default function Columns(Props: ColumnProps) {
     
-    const columnArray = Props.ColumnArray.map((column) => {
+    const columnArray = Props.PriceArray.map((column, index) => {
+        const height = (column / Props.MaxPrice) * 100 + '%';
             return (<div
-                className='column' key={column.id} style={{ height: column.height }}
+                className='column' key={index}
+                style={{ height: height }}
             ></div>);
         });
     return <>{columnArray}</>

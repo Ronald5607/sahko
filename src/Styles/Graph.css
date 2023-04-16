@@ -3,8 +3,11 @@
     outline: 3px solid black;
     margin: 5%;
     grid-template-columns: 1fr 90fr;
+    grid-template-rows: 90fr 1fr 1fr;
     overflow: scroll;
     overflow-y: hidden;
+    height: 75vh;
+    color: var(--text-color);
   }
 
   .info {
