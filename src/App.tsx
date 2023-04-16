@@ -1,10 +1,10 @@
-import Columns from './Columns';
+import Graph from "./Components/Graph";
 
 
 function App() {
   return <>
   <h1>Hello world!</h1>
-  <Columns/>
+  <Graph/>
   </>
 }
 

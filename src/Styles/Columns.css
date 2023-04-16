@@ -1,0 +1,13 @@
+.columns {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-evenly;
+    gap: 5px;
+  }
+  
+  .column {
+    width: 20px;
+    background-color: aliceblue;
+  }

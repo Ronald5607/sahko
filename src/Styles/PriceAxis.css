@@ -1,0 +1,28 @@
+.priceaxis {
+    display: grid;
+    row-gap: 10%;
+    grid-template-columns: 1fr 1fr 9fr;
+    margin-top: 5px;
+    position: sticky;
+    left: 2px;
+    justify-self: end;
+    justify-items: end;
+}
+
+.numbers {
+    display: grid;
+}
+
+.priceinfo {
+    align-self: center;
+    transform: rotate(70deg);
+}
+
+#day {
+    margin-top: 5%;
+}
+
+.verticalline {
+    background-color: black;
+    width: 2px;
+}

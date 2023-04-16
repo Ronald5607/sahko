@@ -1,0 +1,18 @@
+.graph {
+    display: grid;
+    outline: 3px solid black;
+    margin: 5%;
+    grid-template-columns: 1fr 90fr;
+    overflow: scroll;
+    overflow-y: hidden;
+  }
+
+  .info {
+    position: sticky;
+    left: 0;
+    text-align: center;
+  }
+
+  .info div {
+    text-align: center;
+  }
